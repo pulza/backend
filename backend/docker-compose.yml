@@ -19,7 +19,7 @@ services:
       - MYSQL_ROOT_PASSWORD=pulza
     depends_on:
       - db
-    command: "python3 manage.py runserver 0.0.0.0:8000"
+    command: sh docker-entrypoint.sh
     # command: tail -f /dev/null
   nginx:
     image: nginx
