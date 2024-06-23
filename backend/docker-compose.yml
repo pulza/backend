@@ -1,7 +1,7 @@
 version: "3"
 services:
   db:
-    image: mysql
+    image: mysql:8.4.0
     container_name: pulza-db
     volumes:
       - mysql_data:/var/lib/mysql
@@ -22,7 +22,7 @@ services:
     command: sh docker-entrypoint.sh
     # command: tail -f /dev/null
   nginx:
-    image: nginx
+    image: nginx:1.27.0
     container_name: pulza-nginx
     volumes:
       - ./nginx/config:/etc/nginx/conf.d
