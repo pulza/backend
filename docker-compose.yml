@@ -6,7 +6,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     ports:
-      - "8888:3306"
+      - "8889:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=pulza
       - MYSQL_DATABASE=development
@@ -19,8 +19,8 @@ services:
       - MYSQL_ROOT_PASSWORD=pulza
     depends_on:
       - db
-    command: sh docker-entrypoint.sh
-    # command: tail -f /dev/null
+    # command: sh docker-entrypoint.sh
+    command: tail -f /dev/null
   nginx:
     image: nginx:1.27.0
     container_name: pulza-nginx
